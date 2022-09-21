@@ -1,0 +1,54 @@
+main{
+    color: white;
+    padding: 120px;
+    background: url(./img/1289799.webp);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Formulario{
+    margin: auto;
+    margin-top: 160px;
+    background: black;
+    border-top: 4px solid red;
+    border-left: 4px solid yellow;
+    border-right: 4px solid yellow;
+    border-bottom: 4px solid green;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Formulario__Text{
+    background: linear-gradient(90deg, rgba(9,198,85,1) 0%, rgba(65,182,43,1) 29%, rgba(191,200,24,1) 34%, rgba(205,189,31,1) 68%, rgba(199,46,26,1) 69%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.Formulario__Text--Back{
+    background: linear-gradient(90deg, rgba(9,198,85,1) 0%, rgba(65,182,43,1) 29%, rgba(191,200,24,1) 34%, rgba(205,189,31,1) 68%, rgba(199,46,26,1) 69%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.Formulario__Content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Formulario__Content__Label{
+    background: linear-gradient(90deg, rgba(9,198,85,1) 0%, rgba(65,182,43,1) 29%, rgba(191,200,24,1) 34%, rgba(205,189,31,1) 68%, rgba(199,46,26,1) 69%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 600;
+}
+
+
+

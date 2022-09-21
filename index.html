@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./assets/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="icon" href="./assets/img/Logo.ico">
+    <link rel="stylesheet" href="./assets/animaciones.css">
+    <link rel="stylesheet" href="./assets/mediaqueries.css">
     <title>BCRJ</title>
 </head>
 <body>
@@ -21,13 +23,32 @@
                 <li class="Navbar__ul__li"><a href="#Cards">Productos</a></li>
                 <li class="Navbar__ul__li"><a href="#Contact">Contacto</a></li>
             </ul>
-            <div class="Navbar--Carrito">
-                <label for="#Toggle-Carrito"><i class="fas fa-cart-plus"></i></label>
-            <input type="checkbox" name="Carrito" id="#Toggle-Carrito">
+            <div class="Navbar__Carrito">
+                <label for="Toggle-Carrito"><i class="fas fa-cart-plus"></i></label>
+            <input type="checkbox" id="Toggle-Carrito">
+            </div>
+            <div class="Carrito__Menu">
+                <div class="Carrito__Menu__Items">
+                    <img src="./assets/img/Entrada.png" alt="" class="Entrada--Menu">
+                    <div class="Carrito__Menu__Items--Valor">
+                    <button class="Btn">+</button>
+                    <p>0</p>
+                    <button class="Btn">-</button>
+                    </div>
+                </div>
+                <div class="Carrito__Menu--Separador"></div>
+                <div>
+                    <p>TOTAL</p>
+                    <p>$ 0</p>
+                </div>
+                <button class="Btn Btn--Buy Btn--Carrito">COMPRAR</button>
+            </div>
+            <div class="Navbar__User">
+                <i class="fas fa-user Navbar__User--icon"></i>
             </div>
             <div class="Navbar--Menu">
-                <label for="#Toggle-Menu"><i class="fas fa-bars"></i></label>
-                <input type="checkbox" name="Menu" id="#Toggle-Menu">
+                <label for="Toggle-Menu"><i class="fas fa-bars"></i></label>
+                <input type="checkbox" id="Toggle-Menu">
             </div>
         </nav>
     </header>
@@ -38,18 +59,20 @@
             Rasta Love, Rasta Place.
         </h1>
         <div class="Hero__Titles__Btns">
-            <a href="#" class="Btn Btn--Login">Iniciar Sesión</a>
-            <a href="#" class="Btn Btn--Register">Registrarse</a>
+            <a href="./pages/login.html" class="Btn Btn--Login">Iniciar Sesión</a>
+            <a href="./pages/register.html" class="Btn Btn--Register">Registrarse</a>
         </div>
         </div>
-        <img src="./assets/img/337-3374809_reggae-rasta.png" alt="" class="Hero--Image">
+        <img src="./assets/img/337-3374809_reggae-rasta.png" class="Hero--Image" alt="Imágen Portada" title="Imágen Portada">
     </section>
     <section id="About-Us">
+        <div class="About-Us__Content">
         <h2>Baradero Cultural Reggae Jam</h2>
         <p>
             En BCRJ (Baradero Cultural Reggae Jam) Nos unimos para buscar y traer a nuestra ciudad referentes del género.
-            Queremos promover el arte del rastafari, esparcir amor en los corazones de los ciudadanos y  liberarlos del odio de Babylon.
+            Queremos promover el arte del rastafari, esparcir amor en los corazones de los ciudadanos y liberarlos del odio de Babylon.
         </p>
+        </div>
     </section>
     <section id="Events">
         <div class="Events">
@@ -82,10 +105,15 @@
         </table>
         </div>
         <div class="Events__Entradas">
-        <img src="./assets/img/Entrada.png" alt="" class="Events__Entradas--image">
-        <p>Entradas</p>
-        <p>$ 600</p>
-        <button class="Btn">Comprar</button>
+        <img src="./assets/img/Entrada.png" class="Events__Entradas--image" alt="Entrada" title="Entrada">
+        
+        <div class="Events__Entradas__Info">
+            <div>
+                <p>Entradas</p>
+                <p>$ 600</p>
+            </div>
+            <button class="Btn Btn--Buy">Comprar</button>
+        </div>
         </div>
     </section>
         <section id="Gallery-Photos">
@@ -101,42 +129,69 @@
             </div>
         </section>
     <section id="Cards">
+        <h3 class="Cards__Title">Nuestros Productos</h3>
+        <div class="Cards">
         <div class="Cards__Products">
-            <img src="./assets/img/img-products/Producto1.png" alt="">
-            <p>Gorra Rasta</p>
-            <p>$ 400</p>
-            <button class="Btn">Comprar</button>
+            <img src="./assets/img/img-products/Producto1.png" alt="Gorra Rasta" title="Gorra Rasta">
+            <div class="Cards__Products__Info">
+                <div class="Cards__Products__Info__Text">
+                    <p>Gorra Rasta</p>
+                    <p>$ 400</p>
+                </div>
+            <button class="Btn Btn--Buy">Comprar</button>
+            </div>
         </div>
         <div class="Cards__Products">
-            <img src="./assets/img/img-products/Producto2.png" alt="">
-            <p>Visera con rastas</p>
-            <p>$ 600</p>
-            <button class="Btn">Comprar</button>
+            <img src="./assets/img/img-products/Producto2.png" alt="Visera con Rastas" title="Visera con Rastas">
+            <div class="Cards__Products__Info">
+                <div class="Cards__Products__Info__Text">
+                    <p>Visera con Rastas</p>
+                    <p>$ 600</p>
+                </div>
+            <button class="Btn Btn--Buy">Comprar</button>
+            </div>
         </div>
         <div class="Cards__Products">
-            <img src="./assets/img/img-products/Producto3.png" alt="">
-            <p>Riñonera Reggae</p>
-            <p>$ 1000</p>
-            <button class="Btn">Comprar</button>
+            <img src="./assets/img/img-products/Producto3.png" alt="Riñonera Reggae" title="Riñonera Reggae">
+            <div class="Cards__Products__Info">
+                <div class="Cards__Products__Info__Text">
+                    <p>Riñonera Reggae</p>
+                    <p>$ 1000</p>
+                </div>
+            <button class="Btn Btn--Buy">Comprar</button>
+            </div>
         </div>
         <div class="Cards__Products">
-            <img src="./assets/img/img-products/Producto4.webp" alt="">
-            <p>Pines</p>
-            <p>$ 120</p>
-            <button class="Btn">Comprar</button>
+            <img src="./assets/img/img-products/Producto4.webp" alt="Pines" title="Pines">
+            <div class="Cards__Products__Info">
+                <div class="Cards__Products__Info__Text">
+                    <p>Pines</p>
+                    <p>$ 120</p>
+                </div>
+            <button class="Btn Btn--Buy">Comprar</button>
+            </div>
         </div>
         <div class="Cards__Products">
-            <img src="./assets/img/img-products/Producto5.jpg" alt="">
-            <p>Posters</p>
-            <p>$ 250</p>
-            <button class="Btn">Comprar</button>
+            <img src="./assets/img/img-products/Producto5.jpg" alt="Posters" title="Posters">
+            <div class="Cards__Products__Info">
+                <div class="Cards__Products__Info__Text">
+                    <p>Posters</p>
+                    <p>$ 250</p>
+                </div>
+            <button class="Btn Btn--Buy">Comprar</button>
+            </div>
         </div>
         <div class="Cards__Products">
-            <img src="./assets/img/img-products/Productos6.jpg" alt="">
-            <p>Calcomanías</p>
-            <p>$ 70</p>
-            <button class="Btn">Comprar</button>
+            <img src="./assets/img/img-products/Productos6.jpg" alt="Calcomanías" title="Calcomanías">
+            <div class="Cards__Products__Info">
+                <div class="Cards__Products__Info__Text">
+                    <p>Calcomanías</p>
+                    <p>$ 70</p>
+                </div>
+                <button class="Btn Btn--Buy">Comprar</button>
+            </div>
         </div>
+    </div>
     </section>
     <section id="Contact">
         <form>
@@ -148,7 +203,7 @@
             <label for="">Introduzca su Contraseña</label>
             <input type="password" name="" id="" class="Inputs">
             <label for="">Deje su comentario:</label>
-            <input type="text" class="Inputs">
+            <input type="text" class="Inputs Input--Text">
             <input type="submit" value="Enviar" class="Inputs Input--Submit">
         </form>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d414.3941437153999!2d-59.502757468946584!3d-33.80836065902033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ba364cf6baa53d%3A0xddf08ecdbec6b0d9!2sCentro%20Cultural%20Municipalidad%20de%20Barader!5e0!3m2!1ses!2sar!4v1663234797441!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -157,7 +212,7 @@
     <footer>
         <p>✊AMOR Y LIBERTAD PARA TODA LA GENTE✊</p>
         <p>💚💛❤️</p>
-        <img src="./assets/img/Logo.png" alt="" class="Logo">
+        <img src="./assets/img/Logo.png" class="Logo" alt="Logo" title="Logo">
     </footer>
 </body>
 </html>

@@ -7,6 +7,7 @@
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     list-style: none;
+    scroll-behavior: smooth;
     
 }
 /* ===== Scrollbar CSS ===== */
@@ -49,7 +50,6 @@ body{
     position: fixed;
     top: 0;
     background: rgb(0, 0, 0);
-    border-bottom: 2px solid white;
     z-index: 10;
 }
 
@@ -59,7 +59,8 @@ body{
 
 .Navbar{
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 30px;
 }
 
 .Navbar__ul{
@@ -75,6 +76,26 @@ body{
     -webkit-background-clip: text;
     color: transparent;
     font-weight: 900;
+    position: relative;
+}
+
+.Navbar__ul__li a::after{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: all 0.5s ease-in;
+}
+
+.Navbar__ul__li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    transition: all 0.5s ease-out;
 }
 
 .Navbar input{
@@ -89,17 +110,100 @@ body{
     display: none;
 }
 
-.Navbar--Carrito{
+.Navbar__Carrito{
+    font-size: 18px;
+    border: 2px solid white;
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+.Navbar__Carrito i{
+    cursor: pointer;
+}
+
+.Carrito__Menu{
+    background: rgb(0, 0, 0);
+    height: 100vh;
+    width: 30%;
+    position: absolute;
+    top: 110px;
+    right: 0;
+    border: 4px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    transform: translateX(200%);
+}
+
+#Toggle-Carrito:checked + .Carrito__Menu{
+    transform: translateX(0);
+}
+
+.Entrada--Menu{
+    height: 160px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.Carrito__Menu__Items{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 110px;
+}
+
+.Carrito__Menu__Items--Valor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.Carrito__Menu--Separador{
+    margin-top: 200px;
+    height: 4px;
+    width: 90%;
+    background: white;
+    border-radius: 10px;
+}
+.Carrito__Menu div:nth-of-type(3){
+    color: white;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 290px;
+    font-weight: bold;
+}
+
+.Btn--Carrito{
+    margin-top: 70px;
+    width: 90%;
+}
+
+#Toggle-Carrito:checked + .Carrito__Menu{
+    transform: translateX(0);
+}
+
+.Navbar__User{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Navbar__User--icon{
     font-size: 20px;
     border: 2px solid white;
     padding: 14px;
-    border-radius: 10px;
-    
+    border-radius: 30px;
 }
 
-
 #Hero{
-    padding: 160px 10px;
+    padding: 230px 10px;
     gap: 0px;
     display: flex;
     justify-content: space-around;
@@ -124,6 +228,7 @@ body{
     color: transparent;
 }
 
+
 .Hero--Image{
     height: 500px;
 }
@@ -143,17 +248,27 @@ body{
 }
 
 .Btn--Login{
-
+    transition: all 0.3s ease-in;
+}
+.Btn--Login:hover{
+    border: 2px solid rgb(255, 0, 0);
+    color: red;
+    transition: all 0.3s ease-in;
 }
 
 .Btn--Register{
-
+    transition: all 0.3s ease-in;
+}
+.Btn--Register:hover{
+    border: 2px solid rgb(255, 0, 0);
+    color: red;
+    transition: all 0.3s ease-in;
 }
 
-#About-Us{
+.About-Us__Content{
     max-width: 1200px;
     margin: auto;
-    margin-top: 300px;
+    margin-top: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -192,14 +307,51 @@ body{
 }
 
 .Events__Entradas{
-    border: 2px solid white;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 10px;
     padding: 15px;
     background: #252525;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: border 0.3s ease-out;
+}
+
+.Events__Entradas:hover{
+    border-top: 2px solid green;
+    border-left: 2px solid yellow;
+    border-right: 2px solid yellow;
+    border-bottom: 2px solid red;
+    transition: all 0.3s ease-in;
 }
 
 .Events__Entradas--image{
     height: 200px;
+}
+
+.Events__Entradas__Info{
+    display: flex;
+    justify-content: space-around;
+}
+
+.Events__Entradas__Info p{
+    font-weight: 500;
+    
+}
+
+.Btn--Buy{
+ color: rgb(255, 255, 255);
+ border: 2px solid rgb(255, 255, 255);
+ transition: all 0.3s ease-out;
+}
+
+.Btn--Buy:hover{
+    border-top: 2px solid green;
+    border-left: 2px solid yellow;
+    border-right: 2px solid yellow;
+    border-bottom: 2px solid red;
+    color: red;
+    transition: all 0.3s ease-in;
 }
 
 .Gallery-Photos{
@@ -279,11 +431,47 @@ body{
 }
 
 #Cards{
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Cards__Title{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    position: relative;
+}
+
+.Cards__Title::after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.3s ease-in;
+}
+
+.Cards__Title:hover::after{
+    transform: scaleX(1);
+    transform: scaleY(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.Cards{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 40px;
+    
 }
 
 .Cards__Products img{
@@ -292,14 +480,60 @@ body{
 }
 
 .Cards__Products{
+    max-width: 1100px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    background: rgb(99, 98, 98);
-    border: 4px solid black;
+    padding: 40px;
+    background: #252525;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 20px;
+    gap: 30px;
+    transition: border 0.3s ease-out;
+}
+
+.Cards__Products:nth-child(1):hover{
+    border: 2px solid green;
+    transition: all 0.3s ease-in;
+}
+.Cards__Products:nth-child(2):hover{
+    border: 2px solid yellow;
+    transition: all 0.3s ease-in;
+}
+.Cards__Products:nth-child(3):hover{
+    border: 2px solid red;
+    transition: all 0.3s ease-in;
+}
+.Cards__Products:nth-child(4):hover{
+    border: 2px solid green;
+    transition: all 0.3s ease-in;
+}
+.Cards__Products:nth-child(5):hover{
+    border: 2px solid yellow;
+    transition: all 0.3s ease-in;
+}
+.Cards__Products:nth-child(6):hover{
+    border: 2px solid red;
+    transition: all 0.3s ease-in;
+}
+
+
+.Cards__Products__Info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.Cards__Products__Info__Text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);;
 }
 
 #Contact{
@@ -341,12 +575,19 @@ body{
     font-weight: 600;
 }
 .Inputs{
-    border: none;
+    border: 1px solid white;
     border-radius: 10px;
     background: #000000;
     color: white;
     height: 40px;
+    width: 300px;
     outline: none;
+}
+
+.Input--Text{
+    height: 120px;
+    width: 600px;
+    border: 1px solid white;
 }
 
 

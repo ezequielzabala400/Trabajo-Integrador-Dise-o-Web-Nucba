@@ -1,0 +1,39 @@
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes Slide-Right{
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes Slide-Down{
+    0%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.Hero__Titles{
+    animation: Slide-Right 1s ease forwards, fade 0.4s ease-in forwards;
+    
+}
+
+.Hero--Image{
+    animation: Slide-Down 1s ease forwards, fade 0.4s ease-in forwards
+}
+
+.Formulario{
+    animation: Slide-Down 1s ease forwards, fade 0.4s ease-in forwards
+}
