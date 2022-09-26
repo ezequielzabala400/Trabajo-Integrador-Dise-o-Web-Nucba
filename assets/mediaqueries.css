@@ -1,3 +1,63 @@
+@media (max-width: 1400px) {
+    #Hero{
+        gap: 20px;
+        background: url(./img/1289799.webp) center/cover;
+        padding: 200px 10px;
+    }
+
+    .Hero__Titles h1{
+        font-size: 2.4em;
+    }
+
+    .Hero__Titles{
+        gap: 120px;
+    }
+
+    .Hero--Image{
+        height: 400px;
+    }
+
+    #Contact{
+        justify-content: center;
+    }
+
+    #Contact form{
+        max-width: 1000px;
+        font-size: 14px;
+        text-align: center;
+    
+    }
+}
+
+@media (max-width: 1200px) {
+    .About-Us__Content{
+        max-width: 1000px;
+    }
+
+    #Events{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .Gallery-Photos{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    .Gallery-Photos__Item:nth-child(even), .Gallery-Photos__Item:nth-child(odd){
+        grid-column: auto;
+        grid-row: auto;
+        background-size: cover;
+    }
+
+    #Contact iframe{
+        padding-right: 30px;
+    }
+    
+    
+}
+
 @media (max-width: 992px) {
     .Navbar__ul{
         background: black;
@@ -11,6 +71,7 @@
         border-top: none;
         border-radius: 10px;
         transform: translateX(200%);
+        transition: all 0.5s ease;
     }
 
     .Navbar--Menu{
@@ -24,7 +85,20 @@
         padding: 12px 12px;
     }
 
-    #Toggle-Carrito:checked + .Navbar__ul{
+    #Toggle-Menu:hover + .Navbar__ul{
         transform: translateX(0);
+        transition: all 0.5s ease-out;
     }
+
+    .Cards__Products{
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+}
+
+@media (min-width: 320px) and (max-width: 578px) {
+    
 }

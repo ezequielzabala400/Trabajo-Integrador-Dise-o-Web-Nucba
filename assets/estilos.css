@@ -134,6 +134,7 @@ body{
     align-items: center;
     z-index: 2;
     transform: translateX(200%);
+    transition: all 0.5s ease;
 }
 
 #Toggle-Carrito:checked + .Carrito__Menu{
@@ -184,10 +185,6 @@ body{
     width: 90%;
 }
 
-#Toggle-Carrito:checked + .Carrito__Menu{
-    transform: translateX(0);
-}
-
 .Navbar__User{
     color: white;
     display: flex;
@@ -222,10 +219,7 @@ body{
 
 .Hero__Titles h1{
     font-size: 3em;
-    background: linear-gradient(90deg, rgba(9,198,85,1) 0%, rgba(65,182,43,1) 29%, rgba(191,200,24,1) 34%, rgba(205,189,31,1) 68%, rgba(199,46,26,1) 69%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: white;
 }
 
 
@@ -442,28 +436,8 @@ body{
 .Cards__Title{
     color: rgb(255, 255, 255);
     text-align: center;
-    position: relative;
 }
 
-.Cards__Title::after{
-    content: "";
-    height: 2px;
-    width: 100%;
-    background: white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform: scaleY(0);
-    transform-origin: center;
-    transition: all 0.3s ease-in;
-}
-
-.Cards__Title:hover::after{
-    transform: scaleX(1);
-    transform: scaleY(1);
-    transition: all 0.3s ease-in-out;
-}
 
 .Cards{
     display: flex;
@@ -480,13 +454,12 @@ body{
 }
 
 .Cards__Products{
-    max-width: 1100px;
-    margin: auto;
+    max-width: 400px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
     background: #252525;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 20px;
@@ -524,7 +497,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 
 }
 
@@ -533,7 +506,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
 }
 
 #Contact{
